@@ -1,0 +1,25 @@
+{
+  "name": "aprendendo-playwright",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "chrome": "playwright test --headed --project='chromium'",
+    "report": "playwright show-report"
+  },
+  "keywords": [
+    "test",
+    "playwright",
+    "youtube",
+    "e2e",
+    "cross-plataform",
+    "cross-browser"
+  ],
+  "author": "Vini Santos",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.31.2",
+    "typescript": "^5.0.2"
+  }
+}
