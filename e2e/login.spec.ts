@@ -1,7 +1,6 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('Login tests',async () => {
-  
   test('The user login with success', async ({ page }) => {
     await test.step('Success Login', async () => {
     

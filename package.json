@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test",
+    "test": "npx playwright test --ui",
     "chrome": "playwright test --headed --project='chromium'",
     "report": "playwright show-report"
   },
@@ -19,7 +19,7 @@
   "author": "Vini Santos",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.31.2",
+    "@playwright/test": "^1.32.0",
     "typescript": "^5.0.2"
   }
 }

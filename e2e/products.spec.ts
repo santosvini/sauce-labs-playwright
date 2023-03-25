@@ -1,8 +1,7 @@
 import { test, expect } from '@playwright/test'
+test.describe('Products Screen', async () => {
 
-test('All products names begin "Sauce Labs"', async ({ page }) => {
-  test.describe('Products Screen', async () => {
-    test.fail()
+  test('All products names begin "Sauce Labs"', async ({ page }) => {
     await test.step('login', async () => {
       await page.goto('https://www.saucedemo.com/');
       await expect(await page.title()).toBe('Swag Labs');
@@ -11,6 +10,7 @@ test('All products names begin "Sauce Labs"', async ({ page }) => {
       await page.locator('[data-test="login-button"]').click();
     });
 
+  test.fail()
     await test.step('product titlte verification', async () => {
       const titleListLocator = await page.locator('.inventory_item_name');
       const productTitleList = await titleListLocator.allTextContents();
@@ -19,5 +19,5 @@ test('All products names begin "Sauce Labs"', async ({ page }) => {
         await expect(item.slice(0, 10)).toBe('Sauce Labs');
       }
     });
-  })
+  });
 });
