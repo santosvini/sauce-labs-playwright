@@ -1,5 +1,5 @@
 {
-  "name": "aprendendo-playwright",
+  "name": "playwright-sauce-demo",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,6 +8,7 @@
     "ui:mode": "npx playwright test --ui",
     "chrome": "playwright test --headed --project='chromium'",
     "firefox": "playwright test --headed --project='firefox'",
+    "edge": "playwright test --headed --project='edge'",
     "webkit": "playwright test --headed --project='webkit'",
     "debug": "npx playwright test --debug",
     "report": "playwright show-report"

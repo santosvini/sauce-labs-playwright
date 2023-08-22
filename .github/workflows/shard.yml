@@ -1,0 +1,40 @@
+name: Playwright Tests E2E with shard
+
+on:
+  workflow_dispatch:
+    push:
+      branches: [main]
+    pull_request:
+      branches: [main]
+
+jobs:
+  playwright-test-shard:
+    name: "Playwright Tests - ${{ matrix.project }} - Shard ${{ matrix.shard }}"
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        project: [chromium, webkit, firefox, edge]
+        shard: [1/10, 2/10, 3/10, 4/10]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install browsers
+        run: npx playwright install --with-deps
+
+      - name: Run your tests
+        run: npx playwright test --project=${{ matrix.project }} --shard=${{ matrix.shard }}
+
+      - name: Upload blob report to GitHub Actions Artifacts
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: all-blob-reports
+          path: blob-report
+          retention-days: 30
