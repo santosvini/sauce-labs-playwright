@@ -7,6 +7,8 @@
     "test": "npx playwright test",
     "ui:mode": "npx playwright test --ui",
     "chrome": "playwright test --headed --project='chromium'",
+    "firefox": "playwright test --headed --project='firefox'",
+    "webkit": "playwright test --headed --project='webkit'",
     "debug": "npx playwright test --debug",
     "report": "playwright show-report"
   },
