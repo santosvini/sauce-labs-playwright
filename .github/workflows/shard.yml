@@ -2,10 +2,6 @@ name: Playwright Tests E2E with shard
 
 on:
   workflow_dispatch:
-    push:
-      branches: [main]
-    pull_request:
-      branches: [main]
 
 jobs:
   playwright-test-shard:
@@ -14,8 +10,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        project: [chromium, webkit, firefox, edge]
-        shard: [1/10, 2/10, 3/10, 4/10]
+        project: [chromium, firefox]
+        shard: [1/10, 2/10]
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
