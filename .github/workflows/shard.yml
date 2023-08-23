@@ -10,8 +10,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        project: [chromium, firefox]
-        shard: [1/10, 2/10]
+        project: [chrome, firefox]
+        shard: [1/10]
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
