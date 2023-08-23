@@ -1,11 +1,7 @@
 name: Playwright Tests with docker
 
 on:
-  workflow_dispatch:
-    push:
-      branches: [main]
-    pull_request:
-      branches: [main]
+  workflow_dispatch:    
 
 jobs:
   playwright-test-docker:
@@ -26,9 +22,9 @@ jobs:
       - name: Run your tests
         run: npx playwright test
 
-    - uses: actions/upload-artifact@v3
-      if: always()
-      with:
-        name: index.html
-        path: playwright-report/index.html
-        retention-days: 30
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: index.html
+          path: playwright-report/index.html
+          retention-days: 30
