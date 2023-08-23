@@ -2,10 +2,6 @@ name: Playwright Tests E2E
 
 on:
   workflow_dispatch:
-    push:
-      branches: [main]
-    pull_request:
-      branches: [main]
 
 jobs:
   playwright-test-e2e:
